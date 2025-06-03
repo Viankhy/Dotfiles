@@ -6,7 +6,7 @@
   // Posição dos modulos
   "modules-left": ["hyprland/workspaces","tray"],
   "modules-center": ["clock"],
-  "modules-right": ["memory","cpu"],
+  "modules-right": ["memory","cpu","pulseaudio"],
   
   // Configuração dos modulos
   "hyprland/workspaces": {
@@ -27,7 +27,7 @@
   },
   
   "clock": {
-    "format": "{:%H:%M} ",
+    "format": " {:%H:%M}",
     "format-alt": "󰃭 {:%A - %B %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -49,6 +49,14 @@
   },
 
   "cpu": {
-    "format": "󰍛 {usage}%"
+    "format": "󰍛 {usage}%{icon}"
+  },
+
+  "pulseaudio": {
+    "format": "󰕾 {volume}%",
+    "format-muted": "󰖁 Muted",
+    "scroll-step": 10,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   }
+
 }
